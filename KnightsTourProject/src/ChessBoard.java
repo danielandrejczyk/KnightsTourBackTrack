@@ -31,9 +31,14 @@ public class ChessBoard {
 	}
 	//End init board method
 	public boolean isLegalMove(int column, int row) {
-		if(board[column][row] == 0) {
-			return true;
-		} else {
+		try {
+			if(board[column][row] == 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch(ArrayIndexOutOfBoundsException e) {
+			//Tried to move to a square outside the board. Not a legal move.
 			return false;
 		}
 	}
