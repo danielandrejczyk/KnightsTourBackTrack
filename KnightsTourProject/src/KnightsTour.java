@@ -29,16 +29,22 @@ public class KnightsTour {
 	};
 	
 	public boolean tryNextMove() {
+
+
+		return false;
+	}
+	
+	public static void main(String args[]) {
 		
-		boolean success = false;
+		board = new ChessBoard(WIDTH, HEIGHT);
 		
 		ArrayList<Move> possibleMoves = new ArrayList();
 		ArrayList<Move> moves = new ArrayList();
 		possibleMoves.add(new Move(startX, startY));
 		
-		//While we haven't found thee solution GRIND GRIND GRIND!!!
+		boolean success = false;
+		
 		while(! success) {
-			//Create possible moves(Might exist anywhere on or off the board)
 			for(int i = 0; i < 7; i++) {
 				possibleMoves.add(new Move(possibleMoves.get(lastMoveIndex).getX()+knightOffsets[i][0],
 						possibleMoves.get(lastMoveIndex).getY()+knightOffsets[0][i]));
@@ -48,19 +54,9 @@ public class KnightsTour {
 				//Mark square as visited
 				board.markSquare(possibleMoves.get(currentMoveIndex).getX(), possibleMoves.get(currentMoveIndex).getY(),1);
 				//Record the legal move
-				
+
 			}
-			
 		}
-		
-		return false;
-	}
-	
-	public static void main(String args[]) {
-		
-		board = new ChessBoard(WIDTH, HEIGHT);
-		
-		
 		
 	}
 	
