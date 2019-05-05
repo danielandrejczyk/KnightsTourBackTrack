@@ -54,9 +54,11 @@ public class ChessBoard {
 			//for each column
 			for(int i = 0; i < MAX_Width+2; i++) {
 				if (board[i][j] == 69) {
-					boardString += " X ";
+					boardString += " B ";
+				} else if (board[i][j] == 0) {
+					boardString += " O ";
 				} else {
-					boardString += " ~ ";
+					boardString += " M ";
 				}
 				//adding a new line at the end of every row
 				if(i == MAX_Width + 1) {
